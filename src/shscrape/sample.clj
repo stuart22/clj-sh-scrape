@@ -1,5 +1,6 @@
-(ns stubhub-scrape
+(ns shscrape.sample
   (:require [net.cgrand.enlive-html :as html]))
+
 
 
 
@@ -12,7 +13,6 @@
   (->> (html/select site-m [:td.title :a])
        (map (fn [m] (get-in m [:attrs :href])))
        (filter (fn [s] (.startsWith s "https")))))
-
 
 
 
@@ -36,8 +36,3 @@
           "https://alexsaveau.dev/blog/performance/files/kernel/the-fastest-way-to-copy-a-file"
           "https://www.ycombinator.com/companies/terra/jobs/EWMMj0v-full-stack-developer-graduate")
 
-
-
-
-
-  )
